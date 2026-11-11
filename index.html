@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0f1a">
+<meta name="description" content="Atul Malviya – aspiring Data Analyst and Data Scientist skilled in Python, SQL, Power BI and Machine Learning.">
+
+<title>Atul Malviya | Data Analyst &amp; Data Science Portfolio</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Atul Malviya | Data Analyst &amp; Data Science Portfolio">
+<meta property="og:description" content="Python, SQL, Power BI and Machine Learning projects by Atul Malviya.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b0f1a'/%3E%3Ctext x='50' y='68' font-size='56' font-weight='800' text-anchor='middle' fill='%234fd1c5' font-family='sans-serif'%3EA%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{--bg:#0b0f1a;--panel:#121829;--line:#1f2940;--text:#e6eaf5;--mute:#8d99b5;--acc:#4fd1c5;--acc2:#7c8cff}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font:16px/1.65 Inter,system-ui,sans-serif;
+    padding-top:env(safe-area-inset-top,0)
+}
+
+a{color:inherit;text-decoration:none}
+.mono{font-family:'JetBrains Mono',monospace}
+
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+
+section{padding:84px 0 20px}
+
+.lab{color:var(--acc);font-size:13px;margin-bottom:6px}
+
+h2{font-size:clamp(28px,4vw,38px);font-weight:700;margin-bottom:30px;letter-spacing:-.5px}
+
+/* Navigation */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:20;
+    background:rgba(11,15,26,.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    padding-top:env(safe-area-inset-top,0)
+}
+
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+
+.logo{font-weight:800;font-size:18px}
+.logo span{color:var(--acc)}
+
+.links{display:flex;gap:22px;font-size:14px;color:var(--mute)}
+.links a:hover{color:var(--text)}
+
+#menu{
+    display:none;
+    background:none;
+    border:1px solid var(--line);
+    color:var(--text);
+    padding:6px 12px;
+    border-radius:8px;
+    font:inherit;
+    cursor:pointer
+}
+
+/* Buttons */
+
+.btn{
+    display:inline-block;
+    padding:12px 22px;
+    border-radius:10px;
+    font-weight:600;
+    font-size:15px;
+    border:1px solid var(--line);
+    cursor:pointer;
+    transition:transform .15s,background .15s;
+    background:transparent;
+    color:var(--text);
+    font-family:inherit
+}
+
+.btn:hover{transform:translateY(-2px)}
+
+.btn.p{background:var(--acc);color:#062421;border-color:var(--acc)}
+
+.btn:focus-visible,a:focus-visible,button:focus-visible{
+    outline:2px solid var(--acc2);
+    outline-offset:3px
+}
+
+/* Hero */
+
+.hero{
+    padding-top:130px;
+    display:grid;
+    grid-template-columns:1.15fr 1fr;
+    gap:44px;
+    align-items:center
+}
+
+.hero small{color:var(--acc);font-size:14px}
+
+.hero h1{
+    font-size:clamp(38px,6vw,60px);
+    line-height:1.08;
+    margin:10px 0 14px;
+    letter-spacing:-1.5px
+}
+
+.hero h1 em{font-style:normal;color:var(--acc2)}
+
+.hero p{color:var(--mute);max-width:520px;margin-bottom:26px}
+
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+
+.code{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    font-size:13.5px
+}
+
+.code .bar{
+    display:flex;
+    gap:7px;
+    align-items:center;
+    padding:11px 14px;
+    border-bottom:1px solid var(--line);
+    color:var(--mute)
+}
+
+.code .bar i{width:11px;height:11px;border-radius:50%;background:#2a3550}
+.code .bar span{margin-left:8px;font-size:12px}
+.code pre{padding:18px;overflow-x:auto;line-height:1.75;color:#c8d1ea}
+
+.k{color:#c792ea}
+.s{color:#9be37c}
+.f{color:#82aaff}
+.c{color:#5b6788}
+
+/* Cards */
+
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+
+.card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px
+}
+
+.about p{color:#b9c3dc;margin-bottom:14px;max-width:760px}
+
+.stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:20px}
+
+.stat{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:14px 20px
+}
+
+.stat b{display:block;font-size:22px;color:var(--acc)}
+.stat span{font-size:13px;color:var(--mute)}
+
+.card h3{font-size:15px;margin-bottom:12px;color:var(--acc2)}
+
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+
+.tags span{
+    font-size:13px;
+    padding:5px 11px;
+    border-radius:999px;
+    background:#0e1424;
+    border:1px solid var(--line);
+    color:#c8d1ea
+}
+
+/* Experience */
+
+.job{border-left:2px solid var(--line);padding:0 0 0 22px;position:relative}
+
+.job:before{
+    content:"";
+    position:absolute;
+    left:-7px;
+    top:6px;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:var(--acc)
+}
+
+.job h3{font-size:19px}
+.job .meta{color:var(--mute);font-size:14px;margin-bottom:10px}
+.job ul{padding-left:18px;color:#b9c3dc}
+.job li{margin-bottom:6px}
+
+/* Projects */
+
+.proj{
+    transition:transform .2s,border-color .2s;
+    display:flex;
+    flex-direction:column;
+    gap:10px
+}
+
+.proj:hover{transform:translateY(-4px);border-color:var(--acc)}
+
+.proj h3{font-size:18px;color:var(--text);margin:0}
+.proj p{color:var(--mute);font-size:14.5px}
+
+.acts{
+    margin-top:auto;
+    display:flex;
+    gap:18px;
+    padding-top:4px;
+    flex-wrap:wrap
+}
+
+.more{
+    background:none;
+    border:0;
+    padding:0;
+    color:var(--acc);
+    font-size:13px;
+    font-family:'JetBrains Mono',monospace;
+    cursor:pointer
+}
+
+.more:hover{text-decoration:underline}
+
+.hint{color:var(--mute);margin:-18px 0 24px;font-size:15px}
+
+/* Modal */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(5,8,15,.8);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:50;
+    padding:20px
+}
+
+.modal.on{display:flex}
+
+.box{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:16px;
+    max-width:560px;
+    width:100%;
+    max-height:86vh;
+    overflow:auto;
+    padding:30px;
+    position:relative
+}
+
+.box h3{font-size:24px;margin-bottom:8px}
+.box ul{padding-left:18px;color:#b9c3dc;margin:14px 0}
+.box li{margin-bottom:8px}
+
+.x{
+    position:absolute;
+    top:12px;
+    right:14px;
+    background:none;
+    border:0;
+    color:var(--mute);
+    font-size:22px;
+    cursor:pointer
+}
+
+/* Achievements and Education */
+
+.ach{display:flex;gap:16px;align-items:center}
+.ach .ic{font-size:30px}
+.ach h3{color:var(--text);margin:0;font-size:16px}
+.ach p{color:var(--mute);font-size:14px}
+
+.edu{
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    flex-wrap:wrap;
+    align-items:center
+}
+
+.edu h3{color:var(--text);margin:0;font-size:17px}
+.edu p{color:var(--mute);font-size:14px}
+.edu b{color:var(--acc);font-size:18px}
+
+/* Contact */
+
+.contact{text-align:center;padding-bottom:70px}
+.contact p{color:var(--mute);max-width:520px;margin:0 auto 26px}
+
+.cl{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+    margin-bottom:24px
+}
+
+footer{
+    border-top:1px solid var(--line);
+    text-align:center;
+    color:var(--mute);
+    font-size:13px;
+    padding:22px 22px calc(22px + env(safe-area-inset-bottom,0))
+}
+
+/* Responsive */
+
+@media(max-width:860px){
+
+    .hero,.g2,.g3{grid-template-columns:1fr}
+
+    #menu{display:block}
+
+    .links{
+        display:none;
+        position:absolute;
+        top:calc(60px + env(safe-area-inset-top,0));
+        left:0;
+        right:0;
+        flex-direction:column;
+        gap:0;
+        background:var(--bg);
+        border-bottom:1px solid var(--line)
+    }
+
+    .links.on{display:flex}
+    .links a{padding:14px 22px;border-top:1px solid var(--line)}
+}
+
+@media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .btn,.proj{transition:none}
+}
+</style>
+</head>
+
+<body id="top">
+
+<nav aria-label="Main">
+<div class="wrap">
+
+    <a href="#top" class="logo">Atul<span>.</span>M</a>
+
+    <button id="menu" aria-label="Toggle menu" aria-expanded="false" aria-controls="links">
+        Menu
+    </button>
+
+    <div class="links" id="links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</div>
+</nav>
+
+<main class="wrap">
+
+<!-- Hero -->
+
+<div class="hero">
+
+    <div>
+        <small class="mono">Hi, I'm</small>
+
+        <h1>Atul Malviya<br>
+            <em>Data Analyst &amp; ML Enthusiast</em>
+        </h1>
+
+        <p>
+            B.Tech (Class of 2026) from Indore building data dashboards
+            and machine learning apps with Python, SQL and Power BI.
+            I turn raw data into decisions people can act on.
+        </p>
+
+        <div class="cta">
+            <a class="btn p" href="Atul_Malviya_Resume.pdf" download="Atul_Malviya_Resume.pdf">⬇ Download Resume</a>
+            <a class="btn" href="#projects">View projects</a>
+            <a class="btn" href="#contact">Get in touch</a>
+        </div>
+    </div>
+
+    <div class="code mono" aria-hidden="true">
+        <div class="bar"><i></i><i></i><i></i><span>DataAnalyst.py</span></div>
+
+<pre><span class="k">class</span> <span class="f">Atul</span>:
+    role   = <span class="s">"Data Analyst / Data Scientist"</span>
+    stack  = [<span class="s">"Python"</span>, <span class="s">"SQL"</span>, <span class="s">"Pandas"</span>,
+              <span class="s">"Scikit-Learn"</span>, <span class="s">"Power BI"</span>]
+    degree = <span class="s">"B.Tech, RGPV (2026)"</span>
+    city   = <span class="s">"Indore, India"</span>
+
+    <span class="k">def</span> <span class="f">goal</span>(self):
+        <span class="k">return</span> <span class="s">"data-driven solutions"</span></pre>
+    </div>
+
+</div>
+
+<!-- About -->
+
+<section id="about" class="about">
+
+    <div class="lab mono">01 — about</div>
+    <h2>About me</h2>
+
+    <p>
+        I'm a B.Tech (Class of 2026) from SVCE (RGPV),
+        aiming for roles in Artificial Intelligence,
+        Data Science and Data Analysis.
+    </p>
+
+    <p>
+        I've trained at Qubinaire Services, where I worked on data
+        manipulation, analysis and visualization with real-world datasets.
+        My projects range from Power BI sales dashboards to a Streamlit
+        app that predicts diabetes and heart disease.
+    </p>
+
+    <p>
+        Outside of tech, I'm a state-level gold medalist in karate
+        and Thai-boxing, which taught me discipline and consistency.
+    </p>
+
+    <div class="stats">
+        <div class="stat"><b>5</b><span>Projects built</span></div>
+        <div class="stat"><b>7.25</b><span>B.Tech GPA / 10</span></div>
+        <div class="stat"><b>2</b><span>State gold medals</span></div>
+    </div>
+
+</section>
+
+<!-- Skills -->
+
+<section id="skills">
+
+    <div class="lab mono">02 — stack</div>
+    <h2>Skills</h2>
+
+    <div class="grid g3">
+
+        <div class="card">
+            <h3 class="mono">Programming</h3>
+            <div class="tags"><span>Python</span><span>SQL</span></div>
+        </div>
+
+        <div class="card">
+            <h3 class="mono">Libraries / Frameworks</h3>
+            <div class="tags">
+                <span>NumPy</span><span>Pandas</span><span>Matplotlib</span>
+                <span>Scikit-Learn</span><span>Seaborn</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 class="mono">Databases</h3>
+            <div class="tags"><span>MySQL</span></div>
+        </div>
+
+        <div class="card">
+            <h3 class="mono">Data Visualization</h3>
+            <div class="tags"><span>Power BI</span><span>Excel</span></div>
+        </div>
+
+        <div class="card">
+            <h3 class="mono">Tools</h3>
+            <div class="tags"><span>Git</span><span>GitHub</span></div>
+        </div>
+
+        <div class="card">
+            <h3 class="mono">Coursework</h3>
+            <div class="tags">
+                <span>Data Analytics</span><span>Business Intelligence</span>
+                <span>Machine Learning</span><span>AI</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Experience -->
+
+<section id="experience">
+
+    <div class="lab mono">03 — experience</div>
+    <h2>Work experience</h2>
+
+    <div class="job">
+
+        <h3>Trainee</h3>
+        <div class="meta">Qubinaire Services Pvt. Ltd, Indore</div>
+
+        <ul>
+            <li>Built practical skills in Python, SQL, Data Analysis and Data Science through structured training and project-based learning.</li>
+            <li>Performed data manipulation, analysis and visualization using NumPy, Pandas and Matplotlib.</li>
+            <li>Applied data science concepts to mini-projects and case studies on real-world datasets.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- Projects -->
+
+<section id="projects">
+
+    <div class="lab mono">04 — projects</div>
+    <h2>Featured work</h2>
+    <p class="hint">Open a project to read the full details.</p>
+
+    <div class="grid g2">
+
+        <!-- Project 1 -->
+
+        <article class="card proj">
+            <h3>Sales Performance Dashboard</h3>
+            <p>Interactive dashboards tracking sales KPIs, revenue trends and customer insights.</p>
+            <div class="tags"><span>SQL</span><span>Power BI</span></div>
+            <div class="acts" id="acts0">
+                <button class="more" data-i="0">Read details</button>
+            </div>
+        </article>
+
+        <!-- Project 2 -->
+
+        <article class="card proj">
+            <h3>Customer Behavior Analysis</h3>
+            <p>Purchase-data analysis to find buying patterns and seasonal trends.</p>
+            <div class="tags"><span>Python</span><span>SQL</span><span>Pandas</span></div>
+            <div class="acts" id="acts1">
+                <button class="more" data-i="1">Read details</button>
+            </div>
+        </article>
+
+        <!-- Project 3 -->
+
+        <article class="card proj">
+            <h3>Rock vs Mine Prediction</h3>
+            <p>Sonar dataset exploration to separate rocks from underwater mines.</p>
+            <div class="tags"><span>Python</span><span>NumPy</span><span>Matplotlib</span></div>
+            <div class="acts" id="acts2">
+                <button class="more" data-i="2">Read details</button>
+            </div>
+        </article>
+
+        <!-- Project 4: AI Disease Prediction -->
+
+        <article class="card proj">
+            <h3>AI Disease Prediction System</h3>
+            <p>Streamlit app predicting Diabetes and Heart Disease with ML models.</p>
+
+            <div class="tags">
+                <span>Python</span>
+                <span>Scikit-learn</span>
+                <span>Machine Learning</span>
+                <span>Streamlit</span>
+            </div>
+
+            <div class="acts" id="acts3">
+                <button class="more" data-i="3">Read details</button>
+            </div>
+        </article>
+
+        <!-- Project 5: Loan Prediction -->
+
+        <article class="card proj">
+            <h3>Loan Prediction System</h3>
+
+            <p>
+                Machine Learning application that predicts loan approval
+                using applicant financial and personal information.
+            </p>
+
+            <div class="tags">
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>NumPy</span>
+                <span>Scikit-learn</span>
+                <span>Random Forest</span>
+                <span>Streamlit</span>
+            </div>
+
+            <div class="acts" id="acts4">
+                <button class="more" data-i="4">Read details</button>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+<!-- Achievements -->
+
+<section id="achievements">
+
+    <div class="lab mono">05 — impact</div>
+    <h2>Key achievements</h2>
+
+    <div class="grid g2">
+
+        <div class="card ach">
+            <div class="ic">🥇</div>
+            <div>
+                <h3>Gold Medalist</h3>
+                <p>State Karate Championship</p>
+            </div>
+        </div>
+
+        <div class="card ach">
+            <div class="ic">🥇</div>
+            <div>
+                <h3>Gold Medalist</h3>
+                <p>State Thai-boxing Championship</p>
+            </div>
+        </div>
+
+        <!-- Silver Medal -->
+
+        <div class="card ach">
+            <div class="ic">🥈</div>
+            <div>
+                <h3>Silver Medalist</h3>
+                <p>State Kwan Ki Do Championship</p>
+            </div>
+        </div>
+
+        <div class="card ach">
+            <div class="ic">📣</div>
+            <div>
+                <h3>Social Media Lead</h3>
+                <p>Hackathon, SVCE Innovixus Club</p>
+            </div>
+        </div>
+
+        <div class="card ach">
+            <div class="ic">🎓</div>
+            <div>
+                <h3>Certifications</h3>
+                <p>Qubinaire Services Pvt. Ltd · AI ML Workshop, be10xEducation</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Education -->
+
+<section id="education">
+
+    <div class="lab mono">06 — education</div>
+    <h2>Education</h2>
+
+    <div class="grid">
+
+        <div class="card edu">
+            <div>
+                <h3>B.Tech, RGPV (SVCE)</h3>
+                <p>2022 – 2026</p>
+            </div>
+            <b>GPA 7.25 / 10</b>
+        </div>
+
+        <div class="card edu">
+            <div>
+                <h3>Senior Secondary (Class XII, Science)</h3>
+                <p>M.P. Board · 2022</p>
+            </div>
+            <b>72%</b>
+        </div>
+
+        <div class="card edu">
+            <div>
+                <h3>Secondary (Class X)</h3>
+                <p>M.P. Board · 2020</p>
+            </div>
+            <b>78%</b>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Contact -->
+
+<section id="contact" class="contact">
+
+    <div class="lab mono">07 — contact</div>
+    <h2>Let's work together</h2>
+
+    <p>
+        I am open to Data Analyst, Data Science and AI roles.
+        Reach out directly, or download my resume to see everything in one page.
+    </p>
+
+    <div class="cl">
+
+        <a class="btn" href="mailto:atulmalviya1902@gmail.com">
+            ✉ atulmalviya1902@gmail.com
+        </a>
+
+        <a class="btn" href="tel:+917697470459">
+            ☎ +91 76974 70459
+        </a>
+
+        <a class="btn"
+           href="https://www.linkedin.com/in/atul-malviya1902"
+           target="_blank"
+           rel="noopener">
+            in LinkedIn
+        </a>
+
+    </div>
+
+    <a class="btn p" href="Atul_Malviya_Resume.pdf" download="Atul_Malviya_Resume.pdf">
+        ⬇ Download Resume
+    </a>
+
+</section>
+
+</main>
+
+<footer>© 2026 Atul Malviya · Indore, India</footer>
+
+<!-- Project Details Modal -->
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mt">
+
+    <div class="box">
+
+        <button class="x" id="close" aria-label="Close">✕</button>
+
+        <h3 id="mt"></h3>
+
+        <div class="tags" id="mtags"></div>
+
+        <ul id="mlist"></ul>
+
+    </div>
+
+</div>
+
+<script>
+
+// Project Information
+
+const P = [
+
+{
+    t: "Sales Performance Dashboard",
+    g: "",
+    tags: ["SQL", "Power BI"],
+    l: [
+        "Designed interactive dashboards to track sales KPIs, revenue trends and customer insights.",
+        "Improved decision-making by giving clear visualizations of growth patterns."
+    ]
+},
+
+{
+    t: "Customer Behavior Analysis",
+    g: "",
+    tags: ["Python", "NumPy", "SQL", "Pandas", "Matplotlib"],
+    l: [
+        "Analyzed customer purchase data to identify buying patterns and seasonal trends.",
+        "Provided actionable insights to improve customer retention and targeting."
+    ]
+},
+
+{
+    t: "Rock vs Mine Prediction",
+    g: "",
+    tags: ["Python", "NumPy", "Pandas", "Matplotlib"],
+    l: [
+        "Explored a sonar dataset to find the features that separate rocks from underwater mines.",
+        "Generated statistical insights and visualizations to support classification tasks."
+    ]
+},
+
+// AI Disease Prediction System
+
+{
+    t: "AI Disease Prediction System",
+
+    g: "https://github.com/atulmalviya1902/ai-disease-prediction",
+
+    d: "https://ai-disease-predict.streamlit.app/",
+
+    tags: ["Python", "Machine Learning", "Scikit-learn", "Streamlit"],
+
+    l: [
+        "Built an AI-powered system that predicts Diabetes and Heart Disease using machine learning models.",
+        "Developed an interactive Streamlit web app for real-time disease predictions.",
+        "Used multiple datasets and machine learning algorithms for disease prediction.",
+        "Implemented data preprocessing and model training using Python, NumPy and Pandas."
+    ]
+},
+
+// Loan Prediction System
+
+{
+    t: "Loan Prediction System",
+
+    g: "https://github.com/atulmalviya1902/loan_prediction",
+
+    d: "https://loanprediction-1902.streamlit.app/",
+
+    tags: ["Python", "Pandas", "NumPy", "Scikit-learn", "Random Forest", "Streamlit"],
+
+    l: [
+        "Developed an end-to-end Machine Learning application to predict loan approval using a Random Forest Classifier.",
+        "Performed data cleaning, missing value handling, categorical encoding and Exploratory Data Analysis.",
+        "Achieved approximately 85% accuracy on the test dataset.",
+        "Built an interactive Streamlit application with loan prediction, approval probability and data visualization features.",
+        "Deployed the application using Streamlit Community Cloud."
+    ]
+}
+
+];
+
+
+// Modal Elements
+
+const m = document.getElementById('modal');
+const $ = id => document.getElementById(id);
+
+let last = null;
+
+
+// Generate GitHub and Live Demo Buttons
+
+P.forEach((p, i) => {
+
+    if (p.g) {
+
+        const a = document.createElement('a');
+
+        a.className = 'more';
+        a.href = p.g;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = 'GitHub ↗';
+
+        $('acts' + i).appendChild(a);
+
+    }
+
+    if (p.d) {
+
+        const a = document.createElement('a');
+
+        a.className = 'more';
+        a.href = p.d;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = 'Live Demo ↗';
+
+        $('acts' + i).appendChild(a);
+
+    }
+
+});
+
+
+// Open Project Details
+
+document.querySelectorAll('button.more[data-i]').forEach(b => {
+
+    b.onclick = () => {
+
+        const p = P[b.dataset.i];
+
+        last = b;
+
+        $('mt').textContent = p.t;
+
+        $('mtags').innerHTML = p.tags
+            .map(t => '<span>' + t + '</span>')
+            .join('');
+
+        $('mlist').innerHTML = p.l
+            .map(x => '<li>' + x + '</li>')
+            .join('');
+
+        m.classList.add('on');
+
+        $('close').focus();
+
+    };
+
+});
+
+
+// Close Modal
+
+const shut = () => {
+
+    m.classList.remove('on');
+
+    if (last) {
+        last.focus();
+    }
+
+};
+
+$('close').onclick = shut;
+
+
+// Close Modal When Clicking Outside
+
+m.onclick = e => {
+
+    if (e.target === m) {
+        shut();
+    }
+
+};
+
+
+// Close Modal With Escape Key
+
+addEventListener('keydown', e => {
+
+    if (e.key === 'Escape' && m.classList.contains('on')) {
+        shut();
+    }
+
+});
+
+
+// Mobile Navigation Menu
+
+const setMenu = o => {
+
+    $('links').classList.toggle('on', o);
+
+    $('menu').setAttribute('aria-expanded', o);
+
+};
+
+$('menu').onclick = () => {
+
+    setMenu(!$('links').classList.contains('on'));
+
+};
+
+$('links').onclick = () => {
+
+    setMenu(false);
+
+};
+s
+</script>
+
+</body>
+</html>
